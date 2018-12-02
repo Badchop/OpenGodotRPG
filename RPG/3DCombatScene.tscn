@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://PlayerActor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://EnemyActor.tscn" type="PackedScene" id=2]
+
+[node name="3DCombatSceneBase" type="Node"]
+
+[node name="PlayerParty" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="One" type="Position3D" parent="PlayerParty"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10.001 )
+
+[node name="PlayerActor" parent="PlayerParty/One" instance=ExtResource( 1 )]
+
+[node name="Two" type="Position3D" parent="PlayerParty"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.001 )
+
+[node name="PlayerActor" parent="PlayerParty/Two" instance=ExtResource( 1 )]
+
+[node name="Three" type="Position3D" parent="PlayerParty"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 10.001 )
+
+[node name="PlayerActor" parent="PlayerParty/Three" instance=ExtResource( 1 )]
+
+[node name="Enemies" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="One" type="Position3D" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10.0547 )
+
+[node name="EnemyActor" parent="Enemies/One" instance=ExtResource( 2 )]
+
+[node name="Two" type="Position3D" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10.0547 )
+
+[node name="EnemyActor" parent="Enemies/Two" instance=ExtResource( 2 )]
+
+[node name="Three" type="Position3D" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10.0547 )
+
+[node name="EnemyActor" parent="Enemies/Three" instance=ExtResource( 2 )]
+
+[node name="Four" type="Position3D" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10.0547 )
+
+[node name="EnemyActor" parent="Enemies/Four" instance=ExtResource( 2 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-008, 0.642788, -0.766044, 0, 0.766044, 0.642788, 1, 2.80971e-008, -3.34849e-008, -15.3773, 10.5363, 0 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
